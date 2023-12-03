@@ -31,72 +31,31 @@ fun main() {
         val surroundingSymbols = mutableListOf<Char?>()
 
         // Left
-        if (index - 1 >= 0) {
-            surroundingSymbols.add(string[index - 1])
-        } else {
-            surroundingSymbols.add(null)
-        }
+        if (index - 1 >= 0) surroundingSymbols.add(string[index - 1])
 
         // Right
-        if (index + 1 < string.length) {
-            surroundingSymbols.add(string[index + 1])
-        } else {
-            surroundingSymbols.add(null)
-        }
+        if (index + 1 < string.length) surroundingSymbols.add(string[index + 1])
 
         // Up
         if (input.indexOf(string) - 1 >= 0) {
             val lineAbove = input[input.indexOf(string) - 1]
             // Middle
-            if (index < lineAbove.length) {
-                surroundingSymbols.add(lineAbove[index])
-            } else {
-                surroundingSymbols.add(null)
-            }
-
+            if (index < lineAbove.length) surroundingSymbols.add(lineAbove[index])
             // Left
-            if (index - 1 >= 0) {
-                surroundingSymbols.add(lineAbove[index - 1])
-            } else {
-                surroundingSymbols.add(null)
-            }
-
+            if (index - 1 >= 0) surroundingSymbols.add(lineAbove[index - 1])
             // Right
-            if (index + 1 < lineAbove.length) {
-                surroundingSymbols.add(lineAbove[index + 1])
-            } else {
-                surroundingSymbols.add(null)
-            }
-        } else {
-            surroundingSymbols.add(null)
+            if (index + 1 < lineAbove.length) surroundingSymbols.add(lineAbove[index + 1])
         }
 
         // Down
         if (input.indexOf(string) + 1 < input.size) {
             val lineBelow = input[input.indexOf(string) + 1]
-
             // Middle
-            if (index < lineBelow.length) {
-                surroundingSymbols.add(lineBelow[index])
-            } else {
-                surroundingSymbols.add(null)
-            }
-
+            if (index < lineBelow.length) surroundingSymbols.add(lineBelow[index])
             // Left
-            if (index - 1 >= 0) {
-                surroundingSymbols.add(lineBelow[index - 1])
-            } else {
-                surroundingSymbols.add(null)
-            }
-
+            if (index - 1 >= 0) surroundingSymbols.add(lineBelow[index - 1])
             // Right
-            if (index + 1 < lineBelow.length) {
-                surroundingSymbols.add(lineBelow[index + 1])
-            } else {
-                surroundingSymbols.add(null)
-            }
-        } else {
-            surroundingSymbols.add(null)
+            if (index + 1 < lineBelow.length) surroundingSymbols.add(lineBelow[index + 1])
         }
 
         for (symbol in surroundingSymbols) {
@@ -135,9 +94,7 @@ fun main() {
                     continue
                 }
 
-                if (currentNumberIndex >= string.length ||
-                    !(string[currentNumberIndex].isDigit())) {
-
+                if (currentNumberIndex >= string.length || !(string[currentNumberIndex].isDigit())) {
                     // Valid symbols are everything except for periods and digits
                     var surroundingSymbolsAreFound = false
                     for (index in indexesOfCurrentDigits) {
