@@ -89,6 +89,7 @@ fun main() {
     print("Part 1: " + part1(input) + "\n")
     print("Part 2: " + part2(input) + "\n")
 }
+
 fun recursivePart2(input: List<String>, string: String) {
 //    print("         Checking string: $string, index: ${input.indexOf(string)}\n")
 
