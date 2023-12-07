@@ -44,11 +44,11 @@ fun main() {
     }
 
     /* Error when adding all seeds to list before doing the calculation
-    Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+    Exception in thread "`23`.days.main" java.lang.OutOfMemoryError: Java heap space
 	    at java.base/java.lang.Long.valueOf(Long.java:1204)
-	    at Day05Kt.main$part2(Day05.kt:190)
-	    at Day05Kt.main(Day05.kt:226)
-	    at Day05Kt.main(Day05.kt)
+	    at Day05Kt.`23`.days.main$part2(Day05.kt:190)
+	    at Day05Kt.`23`.days.main(Day05.kt:226)
+	    at Day05Kt.`23`.days.main(Day05.kt)
      */
 
 //    fun part2(input: List<String>): Long {
