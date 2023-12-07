@@ -1,3 +1,5 @@
+import java.util.regex.Pattern
+
 /**
  * The engine schematic (your puzzle input) consists of a visual representation of the engine.
  * There are lots of numbers and symbols you don't really understand, but apparently any number adjacent to a symbol,
@@ -119,12 +121,28 @@ fun main() {
         return sum
     }
 
-    fun part2(input: List<String>): Int {
-        var sum = 0
+    fun part2(input: List<String>): Long {
+        val gearMap = mutableMapOf<Pair<Int, Int>, MutableList<Int>>()
+        val pattern = Pattern.compile("\\d+")
 
-        // TODO: Implement part 2
+        for (r in input.indices) {
+            val matcher = pattern.matcher(input[r])
+            while (matcher.find()) {
+                val number = matcher.group().toInt()
+                val start = matcher.start()
+                val end = matcher.end()
 
-        return sum
+                for (i in r - 1..r + 1) {
+                    for (j in start - 1..end) {
+                        if (i in input.indices && j in input[i].indices && input[i][j] == '*') {
+                            gearMap.getOrPut(Pair(i, j)) { mutableListOf() }.add(number)
+                        }
+                    }
+                }
+            }
+        }
+
+        return gearMap.values.filter { it.size == 2 }.sumOf { it[0].toLong() * it[1] }
     }
 
 
@@ -134,5 +152,5 @@ fun main() {
 
     val input = readInput("Day03")
     print("Part 1: " + part1(input) + "\n")
-    //print("Part 2: " + part2(input) + "\n")
+    print("Part 2: " + part2(input) + "\n")
 }
