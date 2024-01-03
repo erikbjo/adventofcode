@@ -10,7 +10,7 @@ fun main() {
     }
 
 
-    val input = readInput("Day")
+    val input = readInput("Day10")
     print("Part 1: " + part1(input) + "\n")
     print("Part 2: " + part2(input) + "\n")
 

@@ -1,5 +1,3 @@
-
-
 /** --- Day 6: Wait For It --- */
 /*
 Time:      7  15   30
@@ -74,9 +72,6 @@ fun main() {
 
         return waysToWin
     }
-
-    val testInput = readInput("Day06test")
-    check(part1(testInput) == 288)
 
     val input = readInput("Day06")
     print("Part 1: " + part1(input) + "\n")

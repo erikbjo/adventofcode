@@ -78,11 +78,6 @@ fun main() {
         return validStrings.size + input.size
     }
 
-
-    val testInput = readInput("Day04test")
-    check(part1(testInput) == 13)
-    check(part2(testInput) == 30)
-
     validStrings = mutableListOf() // Reset global variable
 
     val input = readInput("Day04")

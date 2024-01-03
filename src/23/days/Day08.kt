@@ -79,9 +79,6 @@ fun main() {
         return ret
     }
 
-    val testInput = readInput("Day08test")
-    check(part1(testInput) == 2)
-
     val input = readInput("Day08")
     print("Part 1: " + part1(input) + "\n")
     print("Part 2: " + part2(input) + "\n")

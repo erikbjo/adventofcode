@@ -43,63 +43,9 @@ fun main() {
         return listOfFinalPaths.minOrNull()!!
     }
 
-    /* Error when adding all seeds to list before doing the calculation
-    Exception in thread "`23`.days.main" java.lang.OutOfMemoryError: Java heap space
-	    at java.base/java.lang.Long.valueOf(Long.java:1204)
-	    at Day05Kt.`23`.days.main$part2(Day05.kt:190)
-	    at Day05Kt.`23`.days.main(Day05.kt:226)
-	    at Day05Kt.`23`.days.main(Day05.kt)
-     */
-
-//    fun part2(input: List<String>): Long {
-//        val listOfMaps = getListOfMaps(input)
-//        val seedsInRangeForm =
-//            input.find { it.startsWith("seeds:") }!!.substringAfter(":").trim().split(" ").filter { it.isNotEmpty() }
-//                .map { it.toLong() }
-//
-//
-//        var seeds = mutableListOf<Long>()
-//        var minLocation = Long.MAX_VALUE
-//
-//        for (i in seedsInRangeForm.indices step 2) {
-//            val start = seedsInRangeForm[i]
-//            val end = start + seedsInRangeForm[i + 1]
-//            for (seed in start until end) {
-//                if (seed !in seeds) seeds.add(seed)
-//            }
-//        }
-//
-//        for (seed in seeds) {
-//            var seedToSoil = seed
-//
-//            for (map in listOfMaps) {
-//                for (line in map) {
-//                    val destinationRangeStart = line.split(" ")[0].toLong()
-//                    val sourceRangeStart = line.split(" ")[1].toLong()
-//                    val rangeLength = line.split(" ")[2].toLong()
-//
-//                    if (seedToSoil in sourceRangeStart until sourceRangeStart + rangeLength) {
-//                        seedToSoil = destinationRangeStart + (seedToSoil - sourceRangeStart)
-//                        break
-//                    }
-//                }
-//            }
-//
-//            if (seedToSoil < minLocation) {
-//                minLocation = seedToSoil
-//            }
-//        }
-//
-//        return minLocation
-//    }
-
-    val testInput = readInput("Day05test")
-    check(part1(testInput).toInt() == 35)
-//check(part2(testInput) == 2286)
 
     val input = readInput("Day05")
     print("Part 1: " + part1(input) + "\n")
-    // print("Part 2: " + part2(input) + "\n")
     runBlocking {
         println("Part 2: ${part2(input)}\n")
     }

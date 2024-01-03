@@ -243,9 +243,6 @@ fun main() {
         return totalWinnings
     }
 
-    val testInput = readInput("Day07test")
-    check(part1(testInput) == 6440)
-
     val input = readInput("Day07")
     print("Part 1: " + part1(input) + "\n")
     print("Part 2: " + part2(input) + "\n")

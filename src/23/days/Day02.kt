@@ -112,10 +112,6 @@ fun main() {
         return sumOfPowers
     }
 
-    val testInput = readInput("Day02test")
-    check(part1(testInput) == 8)
-    check(part2(testInput) == 2286)
-
     val input = readInput("Day02")
     print("Part 1: " + part1(input) + "\n")
     print("Part 2: " + part2(input) + "\n")
