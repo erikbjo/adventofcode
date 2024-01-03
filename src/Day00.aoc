@@ -1,11 +1,11 @@
 fun main() {
-    fun part1(input: List<String>): Int {
-        var sum = 0
+    fun part1(input: List<String>): Long {
+        var sum = 0L
         return sum
     }
 
-    fun part2(input: List<String>): Int {
-        var sum = 0
+    fun part2(input: List<String>): Long {
+        var sum = 0L
         return sum
     }
 
